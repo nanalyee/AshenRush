@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 46efa78699872fb42ad12c71efa817c7
+guid: 84bf50dbe50144e45ad1495a2cd03b2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5660778534962921104
-    second: halmoni_0
+      213: 4330694004763997605
+    second: player_jump_0
   - first:
-      213: 5164513745427541781
-    second: halmoni_1
+      213: -9012280687236740709
+    second: player_jump_1
   - first:
-      213: -8769359099624858585
-    second: halmoni_2
+      213: 3706479157532092022
+    second: player_jump_2
+  - first:
+      213: 6651360496480428754
+    second: player_jump_3
+  - first:
+      213: 4107919912467758190
+    second: player_jump_4
+  - first:
+      213: 7838072969455212456
+    second: player_jump_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: halmoni_0
+      name: player_jump_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 4
         y: 0
-        width: 21
-        height: 36
+        width: 20
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09efe90e5102f8e40800000000000000
-      internalID: 5660778534962921104
+      spriteID: 5a53fd89047b91c30800000000000000
+      internalID: 4330694004763997605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halmoni_1
+      name: player_jump_1
       rect:
         serializedVersion: 2
-        x: 29
-        y: 0
-        width: 21
-        height: 35
+        x: 34
+        y: 18
+        width: 22
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51fa4d183e90ca740800000000000000
-      internalID: 5164513745427541781
+      spriteID: b99042dc672fde280800000000000000
+      internalID: -9012280687236740709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halmoni_2
+      name: player_jump_2
       rect:
         serializedVersion: 2
-        x: 55
-        y: 0
+        x: 68
+        y: 9
         width: 21
-        height: 36
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +187,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72c55076c5afc4680800000000000000
-      internalID: -8769359099624858585
+      spriteID: 676e610f72f007330800000000000000
+      internalID: 3706479157532092022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_jump_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d228c191216e4c50800000000000000
+      internalID: 6651360496480428754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_jump_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6cf46c4563420930800000000000000
+      internalID: 4107919912467758190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_jump_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a718fb76dd66cc60800000000000000
+      internalID: 7838072969455212456
       vertices: []
       indices: 
       edges: []
@@ -198,9 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      halmoni_0: 5660778534962921104
-      halmoni_1: 5164513745427541781
-      halmoni_2: -8769359099624858585
+      player_jump_0: 4330694004763997605
+      player_jump_1: -9012280687236740709
+      player_jump_2: 3706479157532092022
+      player_jump_3: 6651360496480428754
+      player_jump_4: 4107919912467758190
+      player_jump_5: 7838072969455212456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,13 +9,18 @@ public class Player : MonoBehaviour
     [Header("References")]
     public Rigidbody2D PlayerRigidbody2D;
     public Animator PlayerAnimator;
+    public BoxCollider2D PlayerCollider2D;
 
-    private bool isGrounded = true;
+    [Header("Status")]
+    public bool isGrounded = true;
+    public int lives = 3;
+    public bool isInvincible = false;
 
     void Start()
     {
         PlayerRigidbody2D = transform.GetComponent<Rigidbody2D>();
         PlayerAnimator = transform.GetComponent<Animator>();
+        PlayerCollider2D = transform.GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -24,6 +30,38 @@ public class Player : MonoBehaviour
             isGrounded = false;
             PlayerAnimator.SetInteger("state", 1);
         }
+    }
+
+    void KillPlayer() 
+    {
+        PlayerCollider2D.enabled = false;
+        PlayerAnimator.enabled = false;
+        PlayerRigidbody2D.AddForceY(JumpForce, ForceMode2D.Impulse);
+    }
+
+    void Hit()
+    {
+        lives -= 1;
+        if (lives == 0)
+        {
+            KillPlayer();
+        }
+    }
+
+    void Heal()
+    {
+        lives = Mathf.Min(3, lives+1);
+    }
+
+    void StartInvincible()
+    {
+        isInvincible = true;
+        Invoke("StopInvincible", 5f);
+    }
+
+    void StopInvincible()
+    {
+        isInvincible = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -37,13 +75,18 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag == "Enemy") {
-
+            if(!isInvincible) {
+                Destroy(collider.gameObject);
+                Hit();
+            }                
         }
         else if (collider.gameObject.tag == "Food") {
-
+            Destroy(collider.gameObject);
+            Heal();
         }
         else if (collider.gameObject.tag == "Golden") {
-            
+            Destroy(collider.gameObject);
+            StartInvincible();
         }
     }
 }

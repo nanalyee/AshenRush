@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135d0926112356542aa087f564c0448a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 5
-  maxSpawnDelay: 7
+  minSpawnDelay: 10
+  maxSpawnDelay: 20
   gameObjects:
   - {fileID: 9116043270516460075, guid: 5e4848408fe1c714abd6f96480fdf5a4, type: 3}
 --- !u!4 &148029531
@@ -320,8 +320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135d0926112356542aa087f564c0448a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 3
-  maxSpawnDelay: 5
+  minSpawnDelay: 5
+  maxSpawnDelay: 10
   gameObjects:
   - {fileID: 9116043270516460075, guid: 73cc7c918585b8c4da7b834d99896cb6, type: 3}
   - {fileID: 9116043270516460075, guid: 8b0d02b1272647542bf7e2fc6ae0af74, type: 3}
@@ -562,6 +562,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &686868470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686868472}
+  - component: {fileID: 686868471}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &686868471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686868470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eaa72c6943ec9b4684ffc96ecfee049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &686868472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686868470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16653268, y: -3.008224, z: 22.637226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033168449
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +807,10 @@ MonoBehaviour:
   JumpForce: 12
   PlayerRigidbody2D: {fileID: 0}
   PlayerAnimator: {fileID: 0}
+  PlayerCollider2D: {fileID: 0}
+  isGrounded: 1
+  lives: 3
+  isInvincible: 0
 --- !u!1 &1535431465
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135d0926112356542aa087f564c0448a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 3
+  minSpawnDelay: 1
   maxSpawnDelay: 5
   gameObjects:
   - {fileID: 2584502507861489096, guid: 60162ae3f88b5024b97551951c552e39, type: 3}
@@ -1150,3 +1198,4 @@ SceneRoots:
   - {fileID: 1535431467}
   - {fileID: 474701092}
   - {fileID: 148029531}
+  - {fileID: 686868472}

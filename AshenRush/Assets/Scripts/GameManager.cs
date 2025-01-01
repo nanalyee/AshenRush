@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        IntroUI.SetActive(true);
+        //IntroUI.SetActive(true);
     }
     
     float CalculateScore()

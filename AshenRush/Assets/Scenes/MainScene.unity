@@ -376,9 +376,8 @@ MonoBehaviour:
   minSpawnDelay: 3
   maxSpawnDelay: 6
   gameObjects:
-  - {fileID: 5982177607358418509, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
-  - {fileID: 7832907182812744048, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}
-  - {fileID: 6478473147077646021, guid: 45b7d420755c5464e89e56c6650d417c, type: 3}
+  - {fileID: 9093095006303328009, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
+  - {fileID: 4715134906294199229, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}
 --- !u!4 &1545445107
 Transform:
   m_ObjectHideFlags: 0
@@ -426,9 +425,8 @@ MonoBehaviour:
   minSpawnDelay: 2
   maxSpawnDelay: 4
   gameObjects:
-  - {fileID: 5982177607358418509, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
-  - {fileID: 7832907182812744048, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}
-  - {fileID: 6478473147077646021, guid: 45b7d420755c5464e89e56c6650d417c, type: 3}
+  - {fileID: 9093095006303328009, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
+  - {fileID: 4715134906294199229, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}
 --- !u!4 &1698903485
 Transform:
   m_ObjectHideFlags: 0
@@ -491,9 +489,8 @@ MonoBehaviour:
   minSpawnDelay: 3
   maxSpawnDelay: 6
   gameObjects:
-  - {fileID: 5982177607358418509, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
-  - {fileID: 7832907182812744048, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}
-  - {fileID: 6478473147077646021, guid: 45b7d420755c5464e89e56c6650d417c, type: 3}
+  - {fileID: 9093095006303328009, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
+  - {fileID: 4715134906294199229, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

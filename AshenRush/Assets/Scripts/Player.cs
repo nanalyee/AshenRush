@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
 
     [Header("Status")]
     public bool isGrounded = true;
-    // public int lives = 3;
     public bool isInvincible = false;
+    private bool jumpRequest = false;
 
     void Start()
     {
@@ -25,18 +25,29 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded) {
-            PlayerRigidbody2D.AddForceY(JumpForce, ForceMode2D.Impulse);
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            jumpRequest = true;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (jumpRequest)
+        {
+            PlayerRigidbody2D.linearVelocity = new Vector2(PlayerRigidbody2D.linearVelocity.x, 0);
+            PlayerRigidbody2D.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             isGrounded = false;
             PlayerAnimator.SetInteger("state", 1);
+            jumpRequest = false;  // Reset the jump request
         }
     }
 
     public void KillPlayer() 
     {
-        PlayerCollider2D.enabled = false;
-        PlayerAnimator.enabled = false;
-        PlayerRigidbody2D.AddForceY(JumpForce, ForceMode2D.Impulse);
+        //PlayerCollider2D.enabled = false;
+        //PlayerAnimator.enabled = false;
+        //PlayerRigidbody2D.AddForceY(JumpForce, ForceMode2D.Impulse);
     }
 
     void Hit()

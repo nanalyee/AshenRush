@@ -17,13 +17,12 @@ public class GameManager : MonoBehaviour
     public GameState State = GameState.Intro;
     public float PlayStartTime = 0f;
     public int Lives = 3;
+    public float GameSpeed = 1f;
 
     [Header("References")]
     public GameObject IntroUI;
     public GameObject DeadUI;
-    public GameObject EnemySpawner;
-    public GameObject FoodSpawner;
-    public GameObject GoldenSpawner;
+    public GameObject PlatformSpawner;
     public Player PlayerScript;
     public TMP_Text scoreText;
 
@@ -37,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //IntroUI.SetActive(true);
+        IntroUI.SetActive(true);
     }
     
     float CalculateScore()
@@ -63,14 +62,9 @@ public class GameManager : MonoBehaviour
         return PlayerPrefs.GetInt("highScore");
     }
 
-    public float CalculateGameSpeed() 
+    public float GetGameSpeed() 
     {
-        if (State != GameState.Playing)
-        {
-            return 3f;
-        }
-        float speed = 3f + (0.5f * Mathf.Floor(CalculateScore()/10f));
-        return Mathf.Min(speed, 20f);
+        return GameSpeed;
     }
 
     void Update()
@@ -87,17 +81,13 @@ public class GameManager : MonoBehaviour
         {
             State = GameState.Playing;
             IntroUI.SetActive(false);
-            EnemySpawner.SetActive(true);
-            FoodSpawner.SetActive(true);
-            GoldenSpawner.SetActive(true);
+            PlatformSpawner.SetActive(true);
             PlayStartTime = Time.time;
         }
         if (State == GameState.Playing && Lives <= 0) 
         {
             PlayerScript.KillPlayer();
-            EnemySpawner.SetActive(false);
-            FoodSpawner.SetActive(false);
-            GoldenSpawner.SetActive(false);
+            PlatformSpawner.SetActive(false);
             DeadUI.SetActive(true);
             State = GameState.Dead;
             SaveHighScore();

@@ -151,11 +151,12 @@ MonoBehaviour:
   State: 0
   PlayStartTime: 0
   Lives: 3
+  GameSpeed: 5
   IntroUI: {fileID: 489118326}
   DeadUI: {fileID: 493104563}
-  PlatformSpawner: {fileID: 0}
-  PlayerScript: {fileID: 0}
-  scoreText: {fileID: 0}
+  PlatformSpawner: {fileID: 624215852}
+  PlayerScript: {fileID: 993446108}
+  scoreText: {fileID: 1506958019}
 --- !u!4 &200148225
 Transform:
   m_ObjectHideFlags: 0
@@ -499,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 794304868}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 80}
+  m_LocalPosition: {x: 0, y: -5.34, z: 80}
   m_LocalScale: {x: 25, y: 0.9966746, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -886,7 +887,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.000000059604645}
+  m_Offset: {x: -0.0033824444, y: -0.49721873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -896,7 +897,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.05, y: 1.2314423}
+  m_Size: {x: 0.79970026, y: 0.20318031}
   m_EdgeRadius: 0
 --- !u!50 &993446105
 Rigidbody2D:
@@ -910,7 +911,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.4
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 4
@@ -923,7 +924,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 5
 --- !u!95 &993446106
 Animator:
@@ -1014,7 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96612ecd159aa16428b46e8b72f1ad57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 10
+  JumpForce: 6.5
   PlayerRigidbody2D: {fileID: 0}
   PlayerAnimator: {fileID: 0}
   PlayerCollider2D: {fileID: 0}
@@ -1372,7 +1373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2012522963
 Transform:
   m_ObjectHideFlags: 0

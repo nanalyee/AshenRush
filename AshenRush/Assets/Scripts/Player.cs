@@ -84,6 +84,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+    void OnCollisionExit2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Platform") {
+            if (isGrounded) {
+                PlayerAnimator.SetInteger("state", 2);
+            }
+            isGrounded = false;
+        }
+    }
+    */
+    
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag == "Enemy") {
             if(!isInvincible) {

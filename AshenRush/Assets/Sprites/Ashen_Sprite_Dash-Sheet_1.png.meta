@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ashen_Sprite_Dash-Sheet_1_0: 2225959767184901668
+      Ashen_Sprite_Dash-Sheet_1_1: -7239942165806948041
+      Ashen_Sprite_Dash-Sheet_1_2: 4923274941286295151
+      Ashen_Sprite_Dash-Sheet_1_3: 8494331785994662113
+      Ashen_Sprite_Dash-Sheet_1_4: 711035765304440580
+      Ashen_Sprite_Dash-Sheet_1_5: 9139028983404721666
+      Ashen_Sprite_Dash-Sheet_1_6: 8387467901435944535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

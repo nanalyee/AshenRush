@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -28,6 +29,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             jumpRequest = true;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isGrounded)
+        {
+            PlayerAnimator.SetInteger("state", 3);
+            StartCoroutine(DelayCoroutine(1f));
         }
     }
 
@@ -73,6 +79,18 @@ public class Player : MonoBehaviour
     void StopInvincible()
     {
         isInvincible = false;
+    }
+
+    private IEnumerator DelayCoroutine(float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+        setState(0);
+    }
+
+
+    void setState(int value)
+    {
+        PlayerAnimator.SetInteger("state", value);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

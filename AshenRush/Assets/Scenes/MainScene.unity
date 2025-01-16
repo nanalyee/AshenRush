@@ -151,7 +151,7 @@ MonoBehaviour:
   State: 0
   PlayStartTime: 0
   Lives: 3
-  GameSpeed: 5
+  GameSpeed: 7
   IntroUI: {fileID: 489118326}
   DeadUI: {fileID: 493104563}
   PlatformSpawner: {fileID: 624215852}
@@ -1201,8 +1201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135d0926112356542aa087f564c0448a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 3
-  maxSpawnDelay: 6
+  minSpawnDelay: 2
+  maxSpawnDelay: 4
   gameObjects:
   - {fileID: 9093095006303328009, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
   - {fileID: 4715134906294199229, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}
@@ -1250,8 +1250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135d0926112356542aa087f564c0448a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnDelay: 2
-  maxSpawnDelay: 4
+  minSpawnDelay: 0
+  maxSpawnDelay: 3
   gameObjects:
   - {fileID: 9093095006303328009, guid: c1e21c959705fe347a8b936ec6af42b2, type: 3}
   - {fileID: 4715134906294199229, guid: c56a921e8bc65d54ea3ae05270975ded, type: 3}

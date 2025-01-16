@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     public bool isGrounded = true;
     public bool isInvincible = false;
     private bool jumpRequest = false;
+    private bool dashRequest = false;
+    private float nowGameSpeed = 0f;
+    private float dashTime = 0.4f;
 
     void Start()
     {
@@ -30,10 +33,16 @@ public class Player : MonoBehaviour
         {
             jumpRequest = true;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isGrounded)
+        if (Input.GetKeyDown(KeyCode.LeftShift) 
+            //&& !isGrounded 
+            && !dashRequest)
         {
+            dashRequest = true;
             PlayerAnimator.SetInteger("state", 3);
-            StartCoroutine(DelayCoroutine(1f));
+            nowGameSpeed = GameManager.Instance.GameSpeed;
+            GameManager.Instance.GameSpeed = nowGameSpeed*3;
+            FreezePositionY();
+            StartCoroutine(DelayCoroutine(dashTime));
         }
     }
 
@@ -81,9 +90,24 @@ public class Player : MonoBehaviour
         isInvincible = false;
     }
 
+    void FreezePositionY()
+    {
+        // Y축 위치 고정 추가
+        PlayerRigidbody2D.constraints |= RigidbodyConstraints2D.FreezePositionY;
+    }
+
+    void UnfreezePositionY()
+    {
+        // Y축 위치 고정 제거
+        PlayerRigidbody2D.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+    }
+
     private IEnumerator DelayCoroutine(float delayInSeconds)
     {
         yield return new WaitForSeconds(delayInSeconds);
+        GameManager.Instance.GameSpeed = nowGameSpeed;
+        UnfreezePositionY();
+        dashRequest = false;
         setState(0);
     }
 

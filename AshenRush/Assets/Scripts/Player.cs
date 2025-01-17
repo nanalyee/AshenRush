@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private bool dashRequest = false;
     private float nowGameSpeed = 0f;
     private float dashTime = 0.4f;
+    private Coroutine currentDashCoroutine;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class Player : MonoBehaviour
             jumpRequest = true;
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) 
-            //&& !isGrounded 
+            && !isGrounded 
             && !dashRequest)
         {
             dashRequest = true;
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
             nowGameSpeed = GameManager.Instance.GameSpeed;
             GameManager.Instance.GameSpeed = nowGameSpeed*3;
             FreezePositionY();
-            StartCoroutine(DelayCoroutine(dashTime));
+            currentDashCoroutine = StartCoroutine(DelayCoroutine(dashTime));
         }
     }
 
@@ -108,6 +109,7 @@ public class Player : MonoBehaviour
         GameManager.Instance.GameSpeed = nowGameSpeed;
         UnfreezePositionY();
         dashRequest = false;
+        currentDashCoroutine = null;
         setState(0);
     }
 

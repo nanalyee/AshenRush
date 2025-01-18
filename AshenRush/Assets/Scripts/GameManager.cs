@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         }
         if (State == GameState.Dead && Input.GetKeyDown(KeyCode.Space)) 
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("MainScene");
         }
     }
 }

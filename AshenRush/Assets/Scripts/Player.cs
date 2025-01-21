@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D PlayerRigidbody2D;
     public Animator PlayerAnimator;
     public BoxCollider2D PlayerCollider2D;
+    public GameObject Weapon;
 
     [Header("Status")]
     public bool isGrounded = true;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     private bool dashRequest = false;
     private float nowGameSpeed = 0f;
     private float dashTime = 0.4f;
+    private float attackTime = 0.4f;
     private Coroutine currentDashCoroutine;
 
     void Start()
@@ -44,6 +46,12 @@ public class Player : MonoBehaviour
             GameManager.Instance.GameSpeed = nowGameSpeed*3;
             FreezePositionY();
             currentDashCoroutine = StartCoroutine(DelayCoroutine(dashTime));
+        }
+        if (Input.GetKeyDown(KeyCode.C) 
+            && !Weapon.activeSelf)
+        {
+            Weapon.SetActive(true);
+            Invoke("StopAttack", attackTime);
         }
     }
 
@@ -80,13 +88,18 @@ public class Player : MonoBehaviour
         GameManager.Instance.Lives = Mathf.Min(3, GameManager.Instance.Lives+1);
     }
 
-    void StartInvincible()
+    void StopAttack()
     {
-        isInvincible = true;
-        Invoke("StopInvincible", 5f);
+        Weapon.SetActive(false);
     }
 
-    void StopInvincible()
+    public void StartInvincible()
+    {
+        isInvincible = true;
+        //Invoke("StopInvincible", 5f);
+    }
+
+    public void StopInvincible()
     {
         isInvincible = false;
     }
@@ -142,7 +155,8 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag == "Enemy") {
             if(!isInvincible) {
-                Destroy(collider.gameObject);
+                Debug.Log("몸");
+                //Destroy(collider.gameObject);
                 Hit();
             }                
         }

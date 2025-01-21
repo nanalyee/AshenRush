@@ -3,17 +3,20 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [Header("References")]
-    public BoxCollider2D WeaponCollider2D;
-    public GameObject Player;
+    public CapsuleCollider2D WeaponCollider2D;
+    public Player Player;
 
-    void Start()
-    {
-        
+    private void OnEnable() {
+        Player.StartInvincible();            
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnDisable() {
+        Player.StopInvincible();            
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.gameObject.tag == "Enemy") {
+            collider.gameObject.SetActive(false);
+        }
     }
 }

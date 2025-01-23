@@ -81,13 +81,13 @@ public class GameManager : MonoBehaviour
         {
             State = GameState.Playing;
             IntroUI.SetActive(false);
-            PlatformSpawner.SetActive(true);
+            //PlatformSpawner.SetActive(true);
             PlayStartTime = Time.time;
         }
         if (State == GameState.Playing && Lives <= 0) 
         {
             PlayerScript.KillPlayer();
-            PlatformSpawner.SetActive(false);
+            //PlatformSpawner.SetActive(false);
             DeadUI.SetActive(true);
             State = GameState.Dead;
             SaveHighScore();
